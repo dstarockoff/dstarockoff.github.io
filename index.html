@@ -1,27 +1,22 @@
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    </link>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+    <link rel="stylesheet" type="text/css" href="style.css"></link>
 </head>
 
 <body>
     <h1>Michelin Star Tracker</h1>
-    <table>
-        <col width="130">
-        <col width="80">
-        <tr>
-            <th>Restaurant Name</th>
-            <th>Star Count</th>
-        </tr>
-        <tr>
-            <td>Per Se</td>
-            <td>3</td>
-        </tr>
-        <tr>
-            <td>Chef's Table at Brooklyn Fare</td>
-            <td>3</td>
-        </tr>
-    </table>
+    <!--Creates beginning of table for restaurants/stars
+        Modify table overall by adding CSS affecting restTable object
+        Modify headers by editing headers CSS class
+        Modify rows by editing row class-->
+    <div class="container-fluid" id="restTable">
+        <div class="row headers">
+            <div class="col-md-6">Restaurant Name</div>
+            <div class="col-md-6">Star Count</div>
+        </div>
+    </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="/app.js">
-    </script>
+    <script src="/app.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 </body>
