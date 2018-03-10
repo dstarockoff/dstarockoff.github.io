@@ -1,27 +1,104 @@
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    </link>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+    <link rel="stylesheet" type="text/css" href="style.css"></link>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Michelin Star Tracker</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="#restTable">TRACK YOUR STARS</a></li>
+                <li><a href="#restaurantlist">RESTAURANT LIST</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <div class="jumbotron text-center">
+        <h1>Michelin Star Tracker</h1>
+        <p>Track your stars.</p>
+    </div>
 </head>
 
 <body>
     <h1>Michelin Star Tracker</h1>
-    <table>
-        <col width="130">
-        <col width="80">
-        <tr>
-            <th>Restaurant Name</th>
-            <th>Star Count</th>
-        </tr>
-        <tr>
-            <td>Per Se</td>
-            <td>3</td>
-        </tr>
-        <tr>
-            <td>Chef's Table at Brooklyn Fare</td>
-            <td>3</td>
-        </tr>
-    </table>
+    <!--Creates beginning of table for restaurants/stars
+        Modify table overall by adding CSS affecting restTable object
+        Modify headers by editing headers CSS class
+        Modify rows by editing row class-->
+
+    <div class="bg-grey container-fluid">
+    <div class="container-fluid col-md-12" id="restTable">
+        <div class="row headers">
+            <div class="col-md-1"></div>
+            <div class="col-md-5">Restaurant Name</div>
+            <div class="col-md-5">Star Count</div>
+        </div>
+    </div>
+    <div class="col-md-5"></div>
+     <div class="col-md-2"><button class="button" id="TotalStars" type="submit">Submit</button></div>
+</div>
+    
+    <div class="container-fluid text-center" id="restaurantlist">
+        <h2>Restaurant List</h2>
+        <p><strong>THREE STARS:</strong> Restaurant 1
+            <p><strong>TWO STARS:</strong> Restaurant 1
+                <p><strong>ONE STAR:</strong> Restaurant 1
+    </div>
+    <div class="container-fluid bg-grey" id="contact">
+        <h2 class="text-center">CONTACT</h2>
+        <div class="row">
+            <div class="col-sm-5">
+                <p>Contact us:</p>
+                <p><span class="glyphicon glyphicon-map-marker"></span> New York, NY</p>
+                <p><span class="glyphicon glyphicon-phone"></span> +1-646-941-0380</p>
+                <p><span class="glyphicon glyphicon-envelope"></span> tarocdan@umich.edu</p>
+            </div>
+            <div class="col-sm-7">
+                <div class="row">
+                    <div class="col-sm-6 form-group">
+                        <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+                    </div>
+                    <div class="col-sm-6 form-group">
+                        <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+                    </div>
+                </div>
+                <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
+                <br>
+                <div class="row">
+                    <div class="col-sm-12 form-group">
+                        <button class="btn btn-default pull-right" type="submit">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="container-fluid text-center">
+        <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+    </footer>
+
+    <div class="container-fluid" id="restTable">
+        <div class="row headers">
+            <div class="col-md-6">Restaurant Name</div>
+            <div class="col-md-6">Star Count</div>
+        </div>
+    </div>
+
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="/app.js">
-    </script>
+    <script src="/app.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 </body>
