@@ -1,8 +1,33 @@
+<<<<<<< HEAD
 $(document).ready(function() {
     //sample data - input full dataset here
     //or replace this with json returned from gsheet (will also need to change references in the for loop)
     var url =
     "https://spreadsheets.google.com/feeds/list/1V5VS3MF6GNiFGddY18JF-qjDuJPtPVJ9qHbSwdve6RY/od6/public/full?alt=json";
+=======
+$( document ).ready(function(){
+  //sample data - input full dataset here
+  //or replace this with json returned from gsheet (will also need to change references in the for loop)
+  var data = [{"restaurant":"restaurant1","stars":1},
+              {"restaurant":"restaurant2","stars":2},
+              {"restaurant":"restaurant3","stars":3}]
+  var table=$("#restTable");
+  //for every restaurant, append restaurant name and stars to restTable div
+  for (i=0;i<data.length;i++){
+    stars=""
+    //add appropriate number of stars, using font awesome star icon
+    for (j=0; j<data[i].stars; j++){
+      stars=stars+"<i class='fas fa-star'></i>"
+      console.log(stars)
+    }
+    table.append("<div class='row'><div class='col-md-6'>"
+                  +data[i].restaurant+
+                  "</div><div class='col-md-6'>"
+                  +stars+
+                  "</div></div>");
+  }
+})
+>>>>>>> fbae31a8f83de6dfe6d9f0572637c5e086801664
 
 //Add an empty array to hold restaurant and star objects. Then, push a restaurant
 //and stars property into the json loop below
