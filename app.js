@@ -4,67 +4,44 @@ $(document).ready(function() {
     var url =
     "https://spreadsheets.google.com/feeds/list/1V5VS3MF6GNiFGddY18JF-qjDuJPtPVJ9qHbSwdve6RY/od6/public/full?alt=json";
 
-$( document ).ready(function(){
-  //sample data - input full dataset here
-  //or replace this with json returned from gsheet (will also need to change references in the for loop)
-  var data = [{"restaurant":"restaurant1","stars":1},
-              {"restaurant":"restaurant2","stars":2},
-              {"restaurant":"restaurant3","stars":3}]
-  var table=$("#restTable");
-  //for every restaurant, append restaurant name and stars to restTable div
-  for (i=0;i<data.length;i++){
-    stars=""
-    //add appropriate number of stars, using font awesome star icon
-    for (j=0; j<data[i].stars; j++){
-      stars=stars+"<i class='fas fa-star'></i>"
-      console.log(stars)
-    }
-    table.append("<div class='row'><div class='col-md-6'>"
-                  +data[i].restaurant+
-                  "</div><div class='col-md-6'>"
-                  +stars+
-                  "</div></div>");
-  }
-})
-
 
 //Add an empty array to hold restaurant and star objects. Then, push a restaurant
 //and stars property into the json loop below
 
  // Get Data from Google Sheets (yes, really).
-  //var data = [];
+  var restData = [];
+  var arrLen;
 
   $.getJSON(url, function(result) {
     data = result.feed.entry;
-    console.log(data);
+    arrLen=data.length
     for (i = 0; i < data.length; i++) {
-      console.log(data[i].title);
-      var t = "$" + "t";
-      var rest = data[i].title[t];
-      var stars = data[i].content[t];
-      object = {};
-      //Check if this is how to create new properties within empty object.
-      object.restaurant=rest;
-      object.stars=stars;
-      data.push(object);
+      var rest = data[i].title.$t;
+      var stars = data[i].content.$t;
+      obj = {};
+      obj.restaurant=rest;
+      obj.stars=parseInt(stars.split(' ')[1]);
+      restData.push(obj);
     }
-  });
 
     var table = $("#restTable");
     //for every restaurant, append restaurant name and stars to restTable div
-    for (i = 0; i < data.length; i++) {
+    for (i = 0; i < restData.length; i++) {
         stars = ""
         //add appropriate number of stars, using font awesome star icon
-        for (j = 0; j < data[i].stars; j++) {
+        for (j = 0; j < restData[i].stars; j++) {
             stars = stars + "<i class='fas fa-star'></i>"
-            console.log(stars)
         }
+        console.log(stars)
         table.append("<div class='row'><div class='col-md-1'><input id='checkBox' type='checkbox'></div><div class='col-md-5'>" +
-            data[i].restaurant +
+            restData[i].restaurant +
             "</div><div class='col-md-5'>" +
             stars +
             "</div></div>");
     }
+  });
+
+    
 
   // Add smooth scrolling to all links in navbar + footer link
   $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
