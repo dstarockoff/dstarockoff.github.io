@@ -1,5 +1,71 @@
 h1{
-	color: blue;
+  color: maroon;
+  text-align: center;
+}
+
+.headers{
+  font-weight: bold;
+}
+
+.jumbotron {
+    background-color: maroon !important;
+    color: #ffffff;
+    padding: 100px 25px;
+    font-family: Montserrat, sans-serif;
+    margin-bottom: 0px !important;
+}
+
+.container-fluid {
+    padding: 60px 50px;
+}
+
+.headers {
+    font-weight: bold;
+}
+
+.bg-grey {
+    padding-top: 10px !important;
+    background-color: #f6f6f6;
+    padding-bottom: 10px;
+}
+
+.button {
+    width: 150px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.navbar {
+    margin-bottom: 0;
+    background-color: black;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: Montserrat, sans-serif;
+}
+
+.navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+}
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+    color: maroon !important;
+    background-color: #fff !important;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+}
+
+footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: maroon;
+  color: blue;
 }
 .headers{
   font-weight: bold;
