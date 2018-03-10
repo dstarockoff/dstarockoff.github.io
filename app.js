@@ -1,10 +1,9 @@
-<<<<<<< HEAD
 $(document).ready(function() {
     //sample data - input full dataset here
     //or replace this with json returned from gsheet (will also need to change references in the for loop)
     var url =
     "https://spreadsheets.google.com/feeds/list/1V5VS3MF6GNiFGddY18JF-qjDuJPtPVJ9qHbSwdve6RY/od6/public/full?alt=json";
-=======
+
 $( document ).ready(function(){
   //sample data - input full dataset here
   //or replace this with json returned from gsheet (will also need to change references in the for loop)
@@ -27,7 +26,7 @@ $( document ).ready(function(){
                   "</div></div>");
   }
 })
->>>>>>> fbae31a8f83de6dfe6d9f0572637c5e086801664
+
 
 //Add an empty array to hold restaurant and star objects. Then, push a restaurant
 //and stars property into the json loop below
